@@ -14,6 +14,8 @@ pp((4,3), shiftFunction(B) | B)
 L = toList((4,3), B)
 ```
 
+Note: the pp function only pretty-prints a 2D bitboard (or a 3D bitboard where the 3rd dimension is bit depth, see below).
+
 # You can use the last coordinate for bit depth.
 Bit depth n means each cell stores a number from 0 to 2^n-1.
 
@@ -32,3 +34,5 @@ L = toList((2,3,4), B+C, bitDepth=True)
 ```
 
 NOTE: using the greaterThanFunction requires that B and C don't use the most significant bit in any entry. The function checks this for you (costing like 2 extra bitops) unless you pass checkSignificantBit=False.
+
+NOTE: for bitboards with bit depth, the `shift` function expects the bit depth to be included as the last coordinate of the first argument `boardShape`.
