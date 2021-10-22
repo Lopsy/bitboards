@@ -27,12 +27,8 @@ greaterThanFunction = gte((2,3,4))
 
 pp((2,3,4), B+C)
 pp((2,3,4), greaterThanFunction(B, C))
-```
 
-# NOTE: using the greaterThanFunction requires that B and C don't use the
-# most significant bit in any entry. The function checks this for you
-# (costing like 2 extra bitops) unless you pass checkSignificantBit=False.
-
-```
 L = toList((2,3,4), B+C, bitDepth=True)
 ```
+
+NOTE: using the greaterThanFunction requires that B and C don't use the most significant bit in any entry. The function checks this for you (costing like 2 extra bitops) unless you pass checkSignificantBit=False.
