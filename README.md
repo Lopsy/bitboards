@@ -1,6 +1,8 @@
 # You can create bitboards and shift them around:
 
 ```
+from bitboards import fromList, shift, pp, toList
+
 B = fromList([[1,0,0],
               [1,0,0],
               [0,0,0],
@@ -22,12 +24,17 @@ Note: `shift` does a bunch of math. Don't call it in a tight loop. Instead, call
 Bit depth n means each cell stores a number from 0 to 2^n-1.
 
 ```
+from bitboards import gte
+
 B = fromList([[1,2,3],
               [0,1,4]], bitDepth=4) # entries are from 0 to 15
 C = fromList([[0,4,3],
               [1,1,5]], bitDepth=4)
 
 greaterThanFunction = gte((2,3,4))
+# now greaterThanFunction compares two bitboards of shape (2,3,4)
+# where the last coordinate 4 is the bit depth. It returns a
+# bitboard of shape (2,3) computing the boolean >= of the inputs.
 
 pp((2,3,4), B+C)
 pp((2,3,4), greaterThanFunction(B, C))
