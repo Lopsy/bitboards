@@ -46,4 +46,4 @@ NOTE: Just like `shift`, the function `gte` does a bunch of math. Don't call it 
 
 NOTE: using the greaterThanFunction requires that B and C don't use the most significant bit in any entry. The function checks this for you (costing like 2 extra bitops) unless you pass checkSignificantBit=False.
 
-NOTE: for bitboards with bit depth, the `shift` function expects the bit depth to be included as the last coordinate of the first argument `boardShape`.
+NOTE: for bitboards with bit depth, the `shift` and `gte` functions expect the bit depth to be included as the last coordinate of the first argument `boardShape`.
